@@ -12,49 +12,30 @@ def multiplication(m1,m2):
 def division(v1,v2):
     print(v1/v2)
 
-# a1 = int(input("Enter the first number to add: "))
-# a2 = int(input("Enter the second number to add: "))
-
-# sum(a1,a2)
-
-
-# b1 = int(input("Enter the first number to subtract: "))
-# b2 = int(input("Enter the first number to subtract: "))
-
-# difference(b1,b2)
-
-
-# c1 = int(input("Enter the first number to multiply: "))
-# c2 = int(input("Enter the first number to multiply: "))
-
-# multiplication(c1,c2)
-
-# d1 = int(input("Enter the first number to divide: "))
-# d2 = int(input("Enter the first number to divide: "))
-
-# division(d1,d2)
-
 def check_operation(opt, opd1, opd2):
     if opt=='+':
-        a = sum(opd1,opd2)
+        sum(opd1,opd2)
     elif opt=='-':
-        a = difference(opd1,opd2)
+        difference(opd1,opd2)
     elif opt=='*':
-        a = multiplication(opd1, opd2)
+        multiplication(opd1, opd2)
     elif opt=='/':
-        a = division(opd1,opd2)
+        division(opd1,opd2)
 
 def starts():
-    opd1 = input("Enter first value: ")
-    opd2 = input("Enter second value: ")
+    opd1 = int(input("Enter first value: "))
+    opd2 = int(input("Enter second value: "))
 
-    opt = input("Which operation you want to perform? (+,-,*,/) ")
+    opt = str(input("Which operation you want to perform? (+,-,*,/) "))
 
-    check_operation(opt, opd1, opd2)
+    result = check_operation(opt, opd1, opd2)
 
     x = input("Do you want to perform another operation on resultant? (y/n) ")
     if x.lower() == 'y':
         opt = input("Which operation you want to perform? (+,-,*,/) ")
-        opd1 = input("Enter the value: ")
+        opd1 = int(input("Enter the value: "))
+        check_operation(opt, result, opd1)
+    else:
+        print("Good Bye")
 
 starts()
