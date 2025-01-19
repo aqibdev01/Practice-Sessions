@@ -2,31 +2,36 @@ print("Welcome to Calculator")
 
 def sum(s1,s2):
     print(s1+s2)
+    return s1+s2
 
 def difference(d1,d2):
     print(d1-d2)
+    return d1-d2
 
 def multiplication(m1,m2):
     print(m1*m2)
+    return m1*m2
 
 def division(v1,v2):
     print(v1/v2)
+    return v1/v2
 
 def check_operation(opt, opd1, opd2):
     if opt=='+':
-        sum(opd1,opd2)
+        return sum(opd1,opd2)
     elif opt=='-':
-        difference(opd1,opd2)
+        return difference(opd1,opd2)
     elif opt=='*':
-        multiplication(opd1, opd2)
+        return multiplication(opd1, opd2)
     elif opt=='/':
-        division(opd1,opd2)
+        return division(opd1,opd2)
+
 
 def starts():
     opd1 = int(input("Enter first value: "))
     opd2 = int(input("Enter second value: "))
 
-    opt = str(input("Which operation you want to perform? (+,-,*,/) "))
+    opt = input("Which operation you want to perform? (+,-,*,/) ")
 
     result = check_operation(opt, opd1, opd2)
 
