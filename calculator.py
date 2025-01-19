@@ -12,8 +12,25 @@ def multiplication(m1,m2):
 def division(v1,v2):
     print(v1/v2)
 
-sum(1,2)
-difference(5,2)
-multiplication(3,2)
-division(9,3)
+a1 = int(input("Enter the first number to add: "))
+a2 = int(input("Enter the second number to add: "))
+
+sum(a1,a2)
+
+
+b1 = int(input("Enter the first number to subtract: "))
+b2 = int(input("Enter the first number to subtract: "))
+
+difference(b1,b2)
+
+
+c1 = int(input("Enter the first number to multiply: "))
+c2 = int(input("Enter the first number to multiply: "))
+
+multiplication(c1,c2)
+
+d1 = int(input("Enter the first number to divide: "))
+d2 = int(input("Enter the first number to divide: "))
+
+division(d1,d2)
 
