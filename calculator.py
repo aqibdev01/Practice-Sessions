@@ -30,39 +30,32 @@ def check_operation(opt, opd1, opd2):
         return division(opd1,opd2)
 
 def starts():
-    opd1 = int(input("Enter first value: "))
-    opd2 = int(input("Enter second value: "))
 
-    opt = input("Which operation you want to perform? (+,-,*,/) ")
-    result = check_operation(opt, opd1, opd2)
+    try:
+        opd1 = int(input("Enter first value: "))
+        opt = input("Which operation you want to perform? (+,-,*,/) ")
+        opd2 = int(input("Enter second value: "))
 
-    
-    if type(result) is int:
-        x = input("Do you want to perform another operation on resultant? (y/n) ")
-        if x.lower() == 'y':
+        result1 = check_operation(opt, opd1, opd2)
+        
+        x1 = input("Do you want to perform another operation on resultant? (y/n) ")
+        if x1.lower() == 'y':
+            opd3 = int(input("Enter the value: "))
             opt = input("Which operation you want to perform? (+,-,*,/) ")
-            opd1 = int(input("Enter the value: "))
-            result = check_operation(opt, result, opd1)
-
-            x = input("Do you want to perform another calculation? (y/n) ")
-            if x.lower() == 'y':
-                starts()
-            else:
-                print("Good Bye")
-        
-        else:
-            x = input("Do you want to perform another calculation? (y/n) ")
-            if x.lower() == 'y':
-                starts()
-            else:
-                print("Good Bye")
-        
-    else:
-        print("Resultant was infinite you can perform second operation on it")
-        x = input("Do you want to perform another calculation? (y/n) ")
-        if x.lower() == 'y':
-            starts()
+            check_operation(opt, result1, opd3)
         else:
             print("Good Bye")
+    except ZeroDivisionError:
+        print("Can not divide by zero")
+    except ValueError:
+        print("Enter a valid number")
+        
+
+    x2 = input("Do you want to perform new operations? (y/n) ")
+    if x2 == 'y':
+        starts()
+    else:
+        print("Good Bye")
+
 
 starts()
